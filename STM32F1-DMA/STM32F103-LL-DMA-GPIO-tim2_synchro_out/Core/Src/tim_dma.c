@@ -27,7 +27,7 @@ void timer_setting(TIM_TypeDef *TIMx)
   LL_TIM_SetPrescaler(TIMx, 0);
   LL_TIM_EnableARRPreload(TIMx);
   WRITE_REG(TIMx->PSC, 0); // LL_TIM_SetPrescaler(TIMx, 0);
-  WRITE_REG(TIMx->ARR, 16-1); // LL_TIM_SetAutoReload(TIMx, 36-1); // period
+  WRITE_REG(TIMx->ARR, 12-1); // LL_TIM_SetAutoReload(TIMx, 36-1); // period
   WRITE_REG(TIMx->CCR1, 2); // LL_TIM_OC_SetCompareCH1(TIMx, 18); // 50% duty cycle
 
   NVIC_SetPriority(TIM2_IRQn, 1);
