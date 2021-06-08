@@ -112,12 +112,12 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
-  dma_clock_irq(7);
-  dma_setting(DMA1, 7);
-  timer_setting(TIM4);
+  dma_clock_irq(2);
+  dma_setting(DMA1, 2);
+  timer_setting(TIM2);
 
-  dma_transmit(DMA1, (uint32_t)data, ((uint32_t)&GPIOB->ODR), 7, 17);
-  TIM4->DIER |= TIM_DIER_UDE; // LL_TIM_EnableDMAReq_UPDATE(TIM4);
+  dma_transmit(DMA1, (uint32_t)data, ((uint32_t)&GPIOB->ODR), 2, 17);
+  TIM2->DIER |= TIM_DIER_UDE; // LL_TIM_EnableDMAReq_UPDATE(TIM2);
 
   printf("Running\n");
   /* USER CODE END 2 */
@@ -128,8 +128,8 @@ int main(void)
   {
 
     // printf("DMA Transmit...\n");
-    dma_transmit(DMA1, (uint32_t)data, ((uint32_t)&GPIOB->ODR), 7, 17);
-    TIM4->DIER |= TIM_DIER_UDE; // LL_TIM_EnableDMAReq_UPDATE(TIM4);
+    dma_transmit(DMA1, (uint32_t)data, ((uint32_t)&GPIOB->ODR), 2, 17);
+    TIM2->DIER |= TIM_DIER_UDE; // LL_TIM_EnableDMAReq_UPDATE(TIM2);
     for(uint16_t i =0; i<25; i++) __asm volatile ("nop");
 
     /* USER CODE END WHILE */

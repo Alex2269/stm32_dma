@@ -22,7 +22,7 @@ void dma_setting(DMA_TypeDef *DMAx, uint32_t Channel)
 
 void timer_setting(TIM_TypeDef *TIMx)
 {
-  LL_APB1_GRP1_EnableClock(RCC_APB1ENR_TIM4EN);
+  LL_APB1_GRP1_EnableClock(RCC_APB1ENR_TIM2EN);
   LL_TIM_DisableCounter(TIMx);
   LL_TIM_SetPrescaler(TIMx, 0);
   LL_TIM_EnableARRPreload(TIMx);
